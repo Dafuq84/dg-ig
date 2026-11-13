@@ -18,17 +18,45 @@
 // sie eine Reaktion.
 // =====================================================================
 
-// Instance: TODO_Name                        // z. B. PenicillinAllergieAnna
-// InstanceOf: DgMedicationAllergy
-// Usage: #example
-// Title: "TODO Titel"
-// Description: "TODO: Was zeigt dieses Beispiel?"
-// * patient = Reference(AnnaMuster)
-// * category = TODO
-// * clinicalStatus = $allergy-clinical#TODO
-// * verificationStatus = $allergy-verification#TODO
-// * code = $sct#TODO "TODO Display"
-// * criticality = TODO
-// * onsetDateTime = "TODO"
-// * recorder = Reference(TODO)
-// * reaction.manifestation = $sct#TODO "TODO Display"
+Instance: PenicillinAllergieAnna
+InstanceOf: DgMedicationAllergy
+Usage: #example
+Title: "Penicillin-Allergie von Anna Muster"
+Description: "Bestätigte Penicillin-Allergie mit Urtikaria, erfasst von Dr. Sara Keller. Beginn nur als ungefähres Alter bekannt."
+* patient = Reference(AnnaMuster)
+* category = #medication
+* clinicalStatus = $allergy-clinical#active
+* verificationStatus = $allergy-verification#confirmed
+* code = $sct#91936005 "Allergy to penicillin (finding)"
+* criticality = #high
+* onsetAge = 30 'a' "Jahre"
+* recorder = Reference(DrSaraKeller)
+* reaction.manifestation = $sct#126485001 "Urticaria (disorder)"
+
+
+
+Instance: HansNoetig
+InstanceOf: CHCorePatient
+Usage: #example
+Title: "Hans Noetig"
+Description: "Beispielpatient nach CH Core Patient."
+* name.family = "Noetig"
+* name.given = "Hans"
+* gender = #male
+* birthDate = "1972-09-03"
+
+
+Instance: KortisonAllergieHans
+InstanceOf: DgMedicationAllergy
+Usage: #example
+Title: "Kortison-Allergie von Hans Noetig"
+Description: "Bestaetigte Allergie gegen Kortikosteroide mit Angioedema, erfasst von Dr. Sara Keller. Beginn nur als ungefaehres Alter bekannt."
+* patient = Reference(HansNoetig)
+* category = #medication
+* clinicalStatus = $allergy-clinical#active
+* verificationStatus = $allergy-verification#confirmed
+* code = $sct#294677009 "Allergy to corticosteroid and/or corticosteroid derivative (finding)"
+* criticality = #high
+* onsetAge = 30 'a' "Jahre"
+* recorder = Reference(DrSaraKeller)
+* reaction.manifestation = $sct#41291007 "Angioedema (disorder)"

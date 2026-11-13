@@ -6,22 +6,17 @@
 
 ### Use Case
 
-TODO: Beschreibt in zwei bis drei Sätzen, welche Situation euer IG abbildet.
-Wer erfasst die Daten, wer liest sie, und wofür werden sie gebraucht?
+Eine Hausarztpraxis erfasst Arzneimittelallergien ihrer Patientinnen und Patienten strukturiert und mit Codes. So kann eine Notfallstation die Angaben zuverlässig auswerten, auch wenn sie die Patientin nicht kennt. Besonders wichtig sind dabei der Auslöser, die Gefährlichkeit und die bekannten Reaktionen.
 
 ### Scope
 
-TODO: Was deckt dieses IG ab, und was bewusst nicht?
+Dieses IG deckt nur Allergien gegen Arzneimittel ab. Nahrungsmittel-, Umwelt- und andere Allergien sowie Unverträglichkeiten ohne allergischen Hintergrund sind bewusst ausgeschlossen. Es definiert ein Profil auf Basis von CH Core AllergyIntolerance und verwendet die Schweizer Allergieliste aus CH Term.
 
 ### Artefakte
 
-TODO: Ergänzt pro Artefakt einen Satz, wofür es da ist.
-
-* [DG Arzneimittelallergie](StructureDefinition-dg-medication-allergy.html): TODO
-* [Titel eures Beispiels](AllergyIntolerance-TODO_Name.html): TODO
-
-<!-- TODO_Name ist der Name hinter "Instance:" in beispiele.fsh,
-     z. B. AllergyIntolerance-PenicillinAllergieAnna.html -->
+* [DG Arzneimittelallergie](StructureDefinition-dg-medication-allergy.html): Profil für eine Arzneimittelallergie, wie sie in der Hausarztpraxis erfasst und auf der Notfallstation gelesen wird. Es wendet die Invariante dg-allergy-1 an: Eine bestätigte Allergie muss mindestens eine Reaktion dokumentieren.
+* [Penicillin-Allergie von Anna Muster](AllergyIntolerance-PenicillinAllergieAnna.html): Beispiel einer bestätigten Penicillin-Allergie mit Urtikaria, Beginn als ungefähres Alter erfasst.
+* [Kortison-Allergie von Hans Nötig](AllergyIntolerance-KortisonAllergieHans.html): Beispiel einer bestätigten Allergie gegen Kortikosteroide mit Angioödem.
 
 ### Abhängigkeiten
 
@@ -29,6 +24,6 @@ Dieses IG baut auf [CH Core 6.0.0](https://fhir.ch/ig/ch-core/6.0.0/) auf.
 
 ### Autorin oder Autor
 
-TODO: Euer Name.
+Samuel Schulthess
 
 <p style="font-size:smaller">Erstellt im Lab des Moduls Data Standards in Healthcare, ZHAW, HS26. Kein offizieller Standard.</p>
